@@ -1,16 +1,21 @@
 #include "lists.h"
 
 /**
- * print_listint_recursive - prints all the elements of a linked list recursively
+ * print_listint - prints all the elements of a linked list
  * @h: linked list of type listint_t to print
  *
  * Return: number of nodes
  */
-size_t print_listint_recursive(const listint_t *h)
+size_t print_listint(const listint_t *h)
 {
-	if (h == NULL)
-		return 0;
+	size_t num = 0;
 
-	printf("%d\n", h->n);
-	return 1 + print_listint_recursive(h->next);
+	while (h)
+	{
+		printf("%d\n", h->n);
+		num++;
+		h = h->next;
+	}
+
+	return (num);
 }
